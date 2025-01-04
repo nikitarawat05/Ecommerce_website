@@ -265,7 +265,7 @@ app.post('/removefromcart',fetchUser,async(req,res)=>{
 app.post('/getcart',fetchUser,async(req,res)=>{
     console.log("getcart");
     let userData=await Users.findOne({_id:req.user.id});
-    req.json(userData.cartData);
+    res.json(userData.cartData);
 })
 
 app.listen(port,(error)=>{
